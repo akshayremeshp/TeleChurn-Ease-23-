@@ -1,0 +1,59 @@
+<div class=" p-3 bg-dark bg-gradient text-light">    
+    <div class="row">
+
+        <div class="col">
+            <a href="{{url_for('churn_list',level='high')}}">
+                <input type="submit" value="High Churn" class="btn btn-primary mt-3 w-100 p-2">
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="{{url_for('churn_list',level='medium')}}">
+                <input type="submit" value="Medium Churn" class="btn btn-primary mt-3 w-100 p-2">
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="{{url_for('churn_list',level='low')}}">
+                <input type="submit" value="Low Churn" class="btn btn-primary mt-3 w-100 p-2">
+            </a>
+        </div>
+        
+
+        <div class="col">
+            <a href="{{url_for('customer_list')}}">
+                <input type="submit" value="Customer Data" class="btn btn-primary mt-3 w-100 p-2">
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="{{url_for('customer_new')}}">
+                <input type="submit" value="New Data" class="btn btn-primary mt-3 w-100 p-2">
+            </a>
+        </div>
+
+{% if session['user_type']==1 %}
+        <div class="col">
+            <a href="{{url_for('user_list')}}">
+                <input type="submit" value="Users" class="btn btn-primary mt-3 w-100 p-2">
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="{{url_for('user_new')}}">
+                <input type="submit" value="New User" class="btn btn-primary mt-3 w-100 p-2">
+            </a>
+        </div>
+{% endif %}
+
+        <div class="col align-self-end">
+            Hi, {{session['full_name']}}
+        </div>
+        <div class="col">
+            <a href="{{url_for('logout')}}">
+                <input type="submit" value="Logout" class="btn btn-secondary mt-3 w-100 p-2">
+            </a>
+        </div>
+    </div>
+
+</div>
